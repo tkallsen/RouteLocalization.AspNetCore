@@ -17,6 +17,8 @@
 
 		public void Apply(ApplicationModel application)
 		{
+			System.Diagnostics.Debug.WriteLine($"RouteLocalizationConvention.Apply called at {System.DateTime.Now} {System.Guid.NewGuid()}");
+
 			RouteTranslatorOptions.RouteTranslatorAction(RouteTranslator);
 			RouteTranslator.Apply(application);
 		}

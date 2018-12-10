@@ -49,6 +49,8 @@
 				.Select(action => action.GetLocalizedModelFor(RouteTranslationConfiguration.Localizer, Culture))
 				.ToList();
 
+			System.Threading.Thread.Sleep(5000);
+
 			// Expect at least one untranslated attribute route with the same template for each ActionModel
 			translatedActionModels.ThrowIfAnyCompletelyTranslated(RouteTranslationConfiguration.Localizer);
 			originalActionModels.ThrowIfAnyUntranslatedTemplateDiffer(RouteTranslationConfiguration.Localizer, Culture);
